@@ -1,0 +1,23 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Plataforma SCADA{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="hero">
+    <h1>Plataforma SCADA / Campo</h1>
+    <p>Visão técnica sobre Lacroix Sofrel S4W vs PLC industrial clássico.</p>
+    <nav class="hero-nav">
+      <a href="{% url 'accueil' %}">Visão Geral</a>
+      <a href="{% url 'arquitetura' %}">Arquitetura e Fluxo</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

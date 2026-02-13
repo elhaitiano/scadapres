@@ -1,0 +1,55 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t d">
+  <title id="t">Topologia SCADA com Sofrel S4W e VPN</title>
+  <desc id="d">Sensores e PLCs em campo conectados ao Sofrel S4W, que envia dados por GSM 4G e túnel VPN ao SCADA central.</desc>
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #1f5f3b; stroke-width: 2; rx: 12; }
+      .field { fill: #eef8f1; stroke: #2f8f66; stroke-width: 2; }
+      .net { fill: #edf3ff; stroke: #2d5da8; stroke-width: 2; }
+      .txt { font: 18px 'Segoe UI', sans-serif; fill: #102016; }
+      .small { font: 15px 'Segoe UI', sans-serif; fill: #243a2f; }
+      .arrow { stroke: #0d6b45; stroke-width: 4; fill: none; marker-end: url(#m); }
+      .arrow2 { stroke: #2d5da8; stroke-width: 4; fill: none; marker-end: url(#m2); }
+      .vpn { stroke: #5d3ea8; stroke-width: 3; stroke-dasharray: 10 7; fill: none; }
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0d6b45"/>
+    </marker>
+    <marker id="m2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d5da8"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="50" width="440" height="420" class="field" rx="16"/>
+  <text x="50" y="86" class="txt">CAMPO / ESTAÇÃO REMOTA</text>
+
+  <rect x="70" y="130" width="180" height="90" class="box"/>
+  <text x="88" y="165" class="txt">Sensores</text>
+  <text x="88" y="192" class="small">Nível, pressão, vazão</text>
+
+  <rect x="290" y="130" width="150" height="90" class="box"/>
+  <text x="308" y="165" class="txt">PLC Clássico</text>
+  <text x="308" y="192" class="small">S7 / AB / GE</text>
+
+  <rect x="130" y="280" width="280" height="130" class="box"/>
+  <text x="155" y="325" class="txt">Lacroix Sofrel S4W</text>
+  <text x="155" y="352" class="small">Aquisição + buffer + alarmes</text>
+  <text x="155" y="378" class="small">Modbus RTU/TCP</text>
+
+  <rect x="520" y="180" width="220" height="120" class="net" rx="12"/>
+  <text x="548" y="225" class="txt">Rede GSM / 4G</text>
+  <text x="548" y="252" class="small">APN privado</text>
+
+  <rect x="790" y="90" width="380" height="320" class="box"/>
+  <text x="820" y="130" class="txt">SCADA CENTRAL</text>
+  <text x="820" y="165" class="small">Servidor SCADA + Historian + Alarmes</text>
+  <text x="820" y="197" class="small">PCVue / WinCC / Ignition / Topkapi</text>
+
+  <path d="M250 175 L290 175" class="arrow"/>
+  <path d="M365 220 L280 280" class="arrow"/>
+  <path d="M410 345 L520 240" class="arrow2"/>
+  <path d="M740 240 L790 240" class="arrow2"/>
+
+  <path d="M430 430 C600 500, 760 500, 930 430" class="vpn"/>
+  <text x="620" y="500" class="small">Túnel VPN criptografado (IPSec/OpenVPN)</text>
+</svg>

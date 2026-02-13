@@ -1,0 +1,106 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}SCADA S4W - Apresentação{% endblock %}
+
+{% block content %}
+<section>
+  <h2>1. O que chamamos de sistema SCADA</h2>
+  <ol>
+    <li>Sensores / Atuadores</li>
+    <li>RTU / PLC de campo</li>
+    <li>Rede de comunicação</li>
+    <li>SCADA central</li>
+  </ol>
+  <p>Ponto-chave: o Sofrel S4W se destaca principalmente no bloco RTU de campo e telecom.</p>
+</section>
+
+<section>
+  <h2>2. Por que o Lacroix Sofrel (S4W) é mais flexível</h2>
+  <table>
+    <thead>
+      <tr><th>Fabricante</th><th>Filosofia</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sofrel</td><td>RTU de telegestão orientada a campo e telecom</td></tr>
+      <tr><td>Siemens</td><td>PLC de automação industrial</td></tr>
+      <tr><td>Allen-Bradley</td><td>PLC de fábrica / processo pesado</td></tr>
+      <tr><td>GE</td><td>PLC industrial + energia</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>3. Comparação técnica de campo SCADA</h2>
+  <h3>Flexibilidade de campo e telecom</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Critério</th><th>Sofrel S4W</th><th>Siemens S7</th><th>Allen-Bradley</th><th>GE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Orientação para telegestão</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>Locais isolados</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>GPRS / 4G / Rádio HF nativo</td><td>Sim</td><td>Opção</td><td>Opção</td><td>Opção</td></tr>
+      <tr><td>Gestão de perda de comunicação</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>Autonomia com buffer local</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Integração SCADA</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Critério SCADA</th><th>Sofrel S4W</th><th>Siemens</th><th>Allen-Bradley</th><th>GE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Modbus TCP / RTU</td><td>Sim nativo</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+      <tr><td>IEC 60870-5-104</td><td>Sim nativo</td><td>Não</td><td>Não</td><td>Não</td></tr>
+      <tr><td>Telegestão de água potável</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>Mapeamento de variáveis simples</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>Parametrização sem TIA/Studio5000</td><td>Sim</td><td>Não</td><td>Não</td><td>Não</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>4. Tabela estilo Excel: S4W + SCADA central</h2>
+  <table>
+    <thead>
+      <tr><th>Elemento</th><th>S4W Sofrel</th><th>SCADA Central</th><th>Vantagem</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Coleta de dados AI/DI</td><td>RTU local</td><td>Leitura remota</td><td>Segurança dos dados</td></tr>
+      <tr><td>Histórico local</td><td>Sim (buffer)</td><td>Sim (DB central)</td><td>Sem lacunas de dados</td></tr>
+      <tr><td>Alarmes de campo</td><td>Sim</td><td>Sim</td><td>Redundância</td></tr>
+      <tr><td>Protocolos</td><td>Modbus, IEC104</td><td>OPC / Driver</td><td>Compatibilidade máxima</td></tr>
+      <tr><td>Comunicação</td><td>4G / Rádio / Ethernet</td><td>VPN / LAN</td><td>Múltiplos caminhos</td></tr>
+      <tr><td>Manutenção</td><td>Teleparametrização</td><td>Supervisão</td><td>Menos deslocamento</td></tr>
+      <tr><td>Escalabilidade</td><td>Muito simples</td><td>Muito simples</td><td>Adição rápida de sites</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>5. Por que o Sofrel é mais flexível na prática</h2>
+  <ul>
+    <li>Separação clara: S4W para aquisição/lógica local, SCADA para supervisão/decisão.</li>
+    <li>Telegestão nativa: retomada após falha, watchdog de rede, armazenamento local.</li>
+    <li>SCADA-agnóstico: PcVue, WinCC, Ignition, Topkapi, Wonderware, ou SCADA próprio.</li>
+  </ul>
+</section>
+
+<section class="quote">
+  <h2>6. Resumo</h2>
+  <blockquote>
+    O Lacroix Sofrel S4W não é um PLC disfarçado. É uma RTU de telegestão projetada para continuidade
+    de serviço, simplicidade SCADA e locais isolados, onde PLCs industriais ficam mais rígidos e caros de operar.
+  </blockquote>
+</section>
+
+<section>
+  <h2>7. Página de Arquitetura</h2>
+  <p>Veja os diagramas de integração em <a href="{% url 'arquitetura' %}">Arquitetura e Fluxo</a>.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Arquitetura SCADA - Sofrel{% endblock %}
+
+{% block content %}
+<section>
+  <h2>Arquitetura: Sofrel S4W conectado ao SCADA central</h2>
+  <p>
+    Este diagrama mostra os sensores de campo ligados a PLCs clássicos, o concentrador Sofrel S4W e o envio de
+    telemetria para o SCADA central por rede GSM/4G através de um túnel VPN seguro.
+  </p>
+</section>
+
+<section class="diagram-section">
+  <h3>Imagem 1: Topologia de Conexão</h3>
+  <img src="{% static 'img/scada_topologia.svg' %}" alt="Topologia SCADA com Sofrel, PLCs, GSM e túnel VPN" class="diagram-image">
+</section>
+
+<section class="diagram-section">
+  <h3>Imagem 2: Fluxo de Dados PLC → Sofrel → SCADA</h3>
+  <img src="{% static 'img/scada_fluxo_dados.svg' %}" alt="Fluxo de dados de PLC clássico para SCADA via Sofrel e GSM VPN" class="diagram-image">
+</section>
+
+<section>
+  <h3>Pontos operacionais</h3>
+  <ul>
+    <li>O Sofrel coleta sinais dos PLCs por Modbus RTU/TCP.</li>
+    <li>O buffer local evita perda de dados durante falhas de comunicação.</li>
+    <li>Quando o link volta, os dados são reenviados ao SCADA central pelo túnel VPN.</li>
+  </ul>
+</section>
+{% endblock %}

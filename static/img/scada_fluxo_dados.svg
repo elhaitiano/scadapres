@@ -1,0 +1,42 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+  <title id="t">Fluxo de dados PLC para SCADA via Sofrel</title>
+  <desc id="d">Fluxo sequencial de aquisição no PLC, concentração no Sofrel, transmissão via GSM e entrega no SCADA central.</desc>
+  <defs>
+    <style>
+      .node { fill: #ffffff; stroke: #1f5f3b; stroke-width: 2; rx: 12; }
+      .txt { font: 18px 'Segoe UI', sans-serif; fill: #13251a; }
+      .small { font: 14px 'Segoe UI', sans-serif; fill: #30443b; }
+      .arr { stroke: #0d6b45; stroke-width: 4; fill: none; marker-end: url(#m); }
+      .vpn { fill: #f2edff; stroke: #5d3ea8; stroke-width: 2; rx: 12; }
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0d6b45"/>
+    </marker>
+  </defs>
+
+  <rect x="40" y="140" width="220" height="130" class="node"/>
+  <text x="65" y="185" class="txt">1) PLC Clássico</text>
+  <text x="65" y="212" class="small">Lê AI/DI e lógicas locais</text>
+
+  <rect x="320" y="120" width="250" height="170" class="node"/>
+  <text x="345" y="165" class="txt">2) Sofrel S4W</text>
+  <text x="345" y="192" class="small">Coleta por Modbus RTU/TCP</text>
+  <text x="345" y="218" class="small">Buffer local + timestamp</text>
+  <text x="345" y="244" class="small">Fila de envio confiável</text>
+
+  <rect x="620" y="120" width="230" height="170" class="node"/>
+  <text x="648" y="165" class="txt">3) GSM / 4G</text>
+  <text x="648" y="192" class="small">Rede móvel industrial</text>
+  <text x="648" y="218" class="small">Failover de link</text>
+
+  <rect x="890" y="140" width="260" height="130" class="node"/>
+  <text x="914" y="185" class="txt">4) SCADA Central</text>
+  <text x="914" y="212" class="small">Supervisão, alarmes e tendências</text>
+
+  <rect x="590" y="320" width="290" height="64" class="vpn"/>
+  <text x="620" y="360" class="small">Transporte seguro por túnel VPN</text>
+
+  <path d="M260 205 L320 205" class="arr"/>
+  <path d="M570 205 L620 205" class="arr"/>
+  <path d="M850 205 L890 205" class="arr"/>
+</svg>
