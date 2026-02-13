@@ -8,11 +8,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-local-dev-only')
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
+def _clean_host(value: str) -> str:
+    host = value.strip().replace('https://', '').replace('http://', '')
+    return host.split('/')[0]
+
+
 ALLOWED_HOSTS = [
-    host.strip()
+    _clean_host(host)
     for host in os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
     if host.strip()
 ]
+
+render_hostname = os.getenv('RENDER_EXTERNAL_HOSTNAME', '').strip()
+if render_hostname:
+    ALLOWED_HOSTS.append(_clean_host(render_hostname))
 
 CSRF_TRUSTED_ORIGINS = [
     origin.strip()
